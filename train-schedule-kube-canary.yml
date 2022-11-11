@@ -3,14 +3,14 @@ apiVersion: v1
 metadata:
   name: train-schedule-service-canary
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: train-schedule
     track: canary
   ports:
   - protocol: TCP
     port: 8080
-    nodePort: 32419
+    targetPort: 8081
 
 ---
 
